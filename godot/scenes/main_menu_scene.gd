@@ -12,6 +12,9 @@ extends Node2D
 var next_scene = game_scene
 var new_game = true
 
+
+
+
 func _ready() -> void:
 	overlay.visible = true
 	new_game_button.disabled = game_scene == null
