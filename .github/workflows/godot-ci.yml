@@ -5,10 +5,10 @@ on: [push, pull_request]
 env:
   GODOT_VERSION: "4.4.1"
   GODOT_STATUS: "stable"
-  DEPLOY_HTML5: true
-  DEPLOY_LINUX: true
-  DEPLOY_WINDOWS: true
-  DEPLOY_MACOS: true
+  # DEPLOY_HTML5: true
+  # DEPLOY_LINUX: true
+  # DEPLOY_WINDOWS: true
+  # DEPLOY_MACOS: true
 
 jobs:
   import-assets:
@@ -47,25 +47,25 @@ jobs:
           cache: false
           wine_path: ${{ env.WINE_PATH }}
       - name: Upload HTML5
-        if: ${{env.DEPLOY_HTML5 == true}}
+        if: ${{vars.DEPLOY_HTML5 != 'false'}}
         uses: actions/upload-artifact@v4
         with:
           name: HTML5
           path: /home/runner/.local/share/godot/archives/HTML5.zip
       - name: Upload Linux
-        if: ${{env.DEPLOY_LINUX == true}}
+        if: ${{vars.DEPLOY_LINUX != 'false'}}
         uses: actions/upload-artifact@v4
         with:
           name: LinuxX11
           path: /home/runner/.local/share/godot/archives/LinuxX11.zip
       - name: Upload Windows
-        if: ${{env.DEPLOY_WINDOWS == true}}
+        if: ${{vars.DEPLOY_WINDOWS != 'false'}}
         uses: actions/upload-artifact@v4
         with:
           name: Windows
           path: /home/runner/.local/share/godot/archives/Windows.zip
       - name: Upload MacOS
-        if: ${{env.DEPLOY_MACOS == true}}
+        if: ${{vars.DEPLOY_MACOS != 'false'}}
         uses: actions/upload-artifact@v4
         with:
           name: macOS
