@@ -5,10 +5,6 @@ on: [push, pull_request]
 env:
   GODOT_VERSION: "4.4.1"
   GODOT_STATUS: "stable"
-  # DEPLOY_HTML5: true
-  # DEPLOY_LINUX: true
-  # DEPLOY_WINDOWS: true
-  # DEPLOY_MACOS: true
 
 jobs:
   import-assets:

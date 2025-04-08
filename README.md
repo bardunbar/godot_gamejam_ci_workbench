@@ -40,6 +40,7 @@ This templates comes with automatic deployment to itch.io for MacOS, Windows, Li
 1. generate new API key in your itch.io settings and setup your `BUTLER_API_KEY` secret - [learn more](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)
 2. create a new game on itch.io
 3. setup `ITCHIO_GAME` and `ITCHIO_USERNAME` secrets in Github and assign them to your itch.io username and game name
+4. optionally setup up the `DEPLOY_HTML5`, `DEPLOY_WINDOWS`, `DEPLOY_MACOS`, or `DEPLOY_LINUX` variables in Github to `false` to disable deployments to specific platforms.
 
 [See working example here](https://github.com/bitbrain/ggj-2023/blob/main/.github/workflows/godot-ci.yml)
 
