@@ -17,6 +17,7 @@ func _ready() -> void:
 	new_game_button.disabled = game_scene == null
 	settings_button.disabled = settings_scene == null
 	continue_button.visible = SaveGame.has_save() and SaveGame.ENABLED
+	exit_button.visible = not OS.has_feature("web")
 	
 	# connect signals
 	new_game_button.pressed.connect(_on_play_button_pressed)
