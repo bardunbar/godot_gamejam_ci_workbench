@@ -32,7 +32,7 @@ jobs:
       #### This was removed because Wine was failing to install and is not needed for web builds
       # - name: install wine
       #   run: |
-      #     sudo apt install wine64 --fix-missing
+      #     sudo apt install wine64
       #     echo "WINE_PATH=$(which wine64)" >> $GITHUB_ENV
       - name: Export Game using Godot
         uses: firebelley/godot-export@v5.2.1
