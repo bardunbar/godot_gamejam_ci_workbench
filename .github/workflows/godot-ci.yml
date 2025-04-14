@@ -29,6 +29,7 @@ jobs:
         with:
           path: .godot/imported/
           key: import-assets-${{ runner.os }}-${{ github.sha }}
+      #### This was removed because Wine was failing to install and is not needed for web builds
       # - name: install wine
       #   run: |
       #     sudo apt install wine64 --fix-missing
@@ -41,6 +42,7 @@ jobs:
           relative_project_path: "./godot"
           archive_output: true
           cache: false
+          #### This was removed because Wine was failing to install and is not needed for web builds
           # wine_path: ${{ env.WINE_PATH }}
       - name: Upload HTML5
         if: ${{vars.DEPLOY_HTML5 != 'false'}}
