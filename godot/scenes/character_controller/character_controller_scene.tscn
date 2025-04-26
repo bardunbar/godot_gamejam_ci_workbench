@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://byjvd00jbhxqh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68yu3"]
+radius = 9.0
+height = 32.0
+
+[sub_resource type="ImageTexture" id="ImageTexture_68yu3"]
+
+[node name="CharacterControllerScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_68yu3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(1, 0.941)
+texture = SubResource("ImageTexture_68yu3")
